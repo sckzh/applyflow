@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.userMapper">
+
+
+    <!--id全局唯一,不能重复，相当于本查询的名称-->
+    <!--resultType:返回结果的数据类型-->
+    <update id="createTable">
+        CREATE TABLE IF NOT EXISTS users (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL,
+        password VARCHAR(100),
+        email VARCHAR(100),
+        create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+    </update>
+</mapper>
