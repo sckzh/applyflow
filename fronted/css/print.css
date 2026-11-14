@@ -1,0 +1,72 @@
+/* =====================================================================
+ * print.css — 简历打印样式（仅在打印时生效）
+ *
+ * 在 resume-preview.html 中以 <link media="print"> 引入。
+ * 目标：Chrome / Edge 下打印为 A4，内容不被截断，可"另存为 PDF"。
+ * ===================================================================== */
+
+/* 纸张与页边距 */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+  /* 隐藏一切非简历内容：导航、页脚、按钮、提示、toast */
+  .app-nav,
+  .app-footer,
+  .no-print,
+  #toast-container {
+    display: none !important;
+  }
+
+  /* 页面底色与内边距归零 */
+  html, body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .page-wrap {
+    display: block;
+    min-height: 0;
+  }
+  .page-main {
+    max-width: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* 简历纸张铺满打印区：去掉阴影、边距与固定宽高（页边距由 @page 控制） */
+  .sheet {
+    width: auto !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* 控制分页：分节与条目整体换页，避免被拦腰截断 */
+  .sheet-section,
+  .sheet-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 长文本与链接 */
+  .sheet,
+  .sheet-entry-desc,
+  .sheet-paragraph,
+  .jd-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  a { color: #1e293b !important; text-decoration: none !important; }
+
+  /* 保留颜色设置：部分浏览器默认不打印背景色，这里保留关键色块 */
+  .sheet-section-title {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

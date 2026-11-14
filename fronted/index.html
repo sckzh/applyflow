@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页 - JobHub 校园求职</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-100">
+  <div class="page-wrap">
+    <nav id="global-nav" class="app-nav"></nav>
+
+    <main class="page-main">
+      <!-- 欢迎横幅 -->
+      <section class="card mb-16" style="background: linear-gradient(120deg, #1d4ed8, #3b82f6); border: none; color: #fff;">
+        <h1 style="font-size: 24px; font-weight: 800;">发现适合你的校园岗位</h1>
+        <p style="margin-top: 6px; font-size: 14px; color: #dbeafe;">
+          <span id="welcome-text">正在加载...</span> · 海量校招 / 实习机会，一键投递
+        </p>
+        <!-- 搜索框 -->
+        <div class="flex gap-8 mt-16" style="max-width: 640px;">
+          <div class="flex flex-1" style="background: #fff; border-radius: 10px; overflow: hidden;">
+            <span class="flex items-center pl-14" style="color: #94a3b8;"><i class="fa fa-search"></i></span>
+            <input id="search-input" class="flex-1" type="text" placeholder="搜索岗位 / 公司 / 城市 / 技能关键词，如：Java、北京、实习"
+                   style="border: none; outline: none; padding: 11px 12px; font-size: 14px; font-family: inherit;">
+            <button id="btn-search" class="btn btn-primary" style="border-radius: 0; padding: 11px 24px;">
+              <i class="fa fa-search"></i><span>搜索</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 岗位列表区 -->
+      <section>
+        <div class="flex items-center justify-between flex-wrap gap-8">
+          <h2 style="font-size: 18px; font-weight: 700;"><i class="fa fa-briefcase" style="color: #2563eb;"></i> 在招岗位</h2>
+          <span id="total-info" class="text-sub" style="font-size: 13px;"></span>
+        </div>
+
+        <!-- 三态区块容器 -->
+        <div id="list-state"></div>
+        <!-- 岗位卡片网格 -->
+        <div id="job-grid" class="job-grid hidden"></div>
+
+        <!-- 分页 -->
+        <div id="pagination" class="pagination hidden">
+          <button id="btn-prev" class="btn btn-outline btn-sm"><i class="fa fa-angle-left"></i><span>上一页</span></button>
+          <span class="page-info" id="page-info"></span>
+          <button id="btn-next" class="btn btn-outline btn-sm"><span>下一页</span><i class="fa fa-angle-right"></i></button>
+        </div>
+      </section>
+    </main>
+
+    <footer id="global-footer" class="app-footer"></footer>
+  </div>
+
+  <script src="js/mock.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人资料 - JobHub 校园求职</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-100">
+  <div class="page-wrap">
+    <nav id="global-nav" class="app-nav"></nav>
+
+    <main class="page-main" style="max-width: 640px;">
+      <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 20px;">
+        <i class="fa fa-user" style="color: #2563eb;"></i> 个人资料
+      </h1>
+
+      <section class="card">
+        <!-- 三态区块 -->
+        <div id="profile-state"></div>
+
+        <form id="profile-form" class="hidden" novalidate>
+          <div class="mb-16">
+            <label class="form-label" for="pf-nickname">昵称<span class="req">*</span></label>
+            <input class="form-input" type="text" id="pf-nickname" placeholder="展示在导航栏的昵称">
+            <p class="form-error" id="pf-nickname-error"></p>
+          </div>
+          <div class="mb-16">
+            <label class="form-label" for="pf-email">邮箱</label>
+            <input class="form-input" type="email" id="pf-email" placeholder="example@stu.edu.cn">
+          </div>
+          <div class="mb-16">
+            <label class="form-label" for="pf-phone">手机号</label>
+            <input class="form-input" type="tel" id="pf-phone" placeholder="11 位手机号">
+          </div>
+          <div class="mb-16">
+            <label class="form-label" for="pf-city">所在城市</label>
+            <input class="form-input" type="text" id="pf-city" placeholder="如：上海">
+          </div>
+          <div class="mb-16">
+            <label class="form-label" for="pf-target">求职意向</label>
+            <input class="form-input" type="text" id="pf-target" placeholder="如：Java 开发工程师">
+          </div>
+          <div class="mb-16">
+            <label class="form-label" for="pf-intro">一句话简介</label>
+            <textarea class="form-textarea" id="pf-intro" placeholder="简单介绍一下自己（选填）" style="min-height: 80px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="btn-save">
+            <i class="fa fa-save"></i><span>保存资料</span>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="global-footer" class="app-footer"></footer>
+  </div>
+
+  <script src="js/mock.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages/profile.js"></script>
+</body>
+</html>

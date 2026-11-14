@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的投递 - JobHub 校园求职</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-100">
+  <div class="page-wrap">
+    <nav id="global-nav" class="app-nav"></nav>
+
+    <main class="page-main" style="max-width: 860px;">
+      <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 20px;">
+        <i class="fa fa-briefcase" style="color: #2563eb;"></i> 我的求职
+      </h1>
+
+      <!-- 我的收藏 -->
+      <section class="card">
+        <h2 class="card-title"><i class="fa fa-star"></i>我的收藏 <span id="fav-count" class="tag tag-gray"></span></h2>
+        <div id="fav-state"></div>
+        <div id="fav-list"></div>
+      </section>
+
+      <!-- 我的投递记录 -->
+      <section class="card">
+        <h2 class="card-title"><i class="fa fa-paper-plane"></i>我的投递记录 <span id="app-count" class="tag tag-gray"></span></h2>
+        <div id="app-state"></div>
+        <div id="app-list"></div>
+      </section>
+    </main>
+
+    <footer id="global-footer" class="app-footer"></footer>
+  </div>
+
+  <script src="js/mock.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages/applications.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 / 注册 - JobHub 校园求职</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-100 min-h-screen">
+  <div class="page-wrap">
+    <main class="page-main flex items-center justify-center" style="padding-top: 60px; padding-bottom: 60px;">
+      <div class="card w-full" style="max-width: 420px; padding: 32px 28px;">
+
+        <!-- Logo -->
+        <div class="text-center mb-6">
+          <div class="inline-flex items-center justify-center" style="width: 56px; height: 56px; border-radius: 16px; background: #dbeafe;">
+            <i class="fa fa-graduation-cap" style="font-size: 26px; color: #2563eb;"></i>
+          </div>
+          <h1 class="mt-4" style="font-size: 22px; font-weight: 800;">JobHub 校园求职</h1>
+          <p class="text-sub" style="font-size: 13px; margin-top: 4px;">登录后浏览岗位、投递简历、AI 优化简历</p>
+        </div>
+
+        <!-- 登录 / 注册 切换 -->
+        <div class="flex mb-6" style="background: #f1f5f9; border-radius: 10px; padding: 4px;">
+          <button type="button" id="tab-login" class="btn flex-1" style="background: #2563eb; color: #fff;">登录</button>
+          <button type="button" id="tab-register" class="btn flex-1" style="background: transparent; color: #475569;">注册</button>
+        </div>
+
+        <!-- 错误提示条 -->
+        <div id="form-error-bar" class="hidden mb-4" style="background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 8px; padding: 10px 14px; font-size: 13px;">
+          <i class="fa fa-exclamation-circle"></i> <span id="form-error-text"></span>
+        </div>
+
+        <!-- 登录表单 -->
+        <form id="login-form" novalidate>
+          <div class="mb-4">
+            <label class="form-label" for="login-username">用户名<span class="req">*</span></label>
+            <input class="form-input" type="text" id="login-username" placeholder="3-20 位字母、数字或下划线" autocomplete="username">
+            <p class="form-error" id="login-username-error"></p>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="login-password">密码<span class="req">*</span></label>
+            <input class="form-input" type="password" id="login-password" placeholder="6-20 位" autocomplete="current-password">
+            <p class="form-error" id="login-password-error"></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="btn-login-submit">
+            <i class="fa fa-sign-in"></i><span>登 录</span>
+          </button>
+          <p class="form-hint text-center mt-8">演示账号：user / 123456（或 admin / 123456）</p>
+        </form>
+
+        <!-- 注册表单 -->
+        <form id="register-form" class="hidden" novalidate>
+          <div class="mb-4">
+            <label class="form-label" for="reg-username">用户名<span class="req">*</span></label>
+            <input class="form-input" type="text" id="reg-username" placeholder="3-20 位字母、数字或下划线" autocomplete="username">
+            <p class="form-error" id="reg-username-error"></p>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="reg-password">密码<span class="req">*</span></label>
+            <input class="form-input" type="password" id="reg-password" placeholder="6-20 位" autocomplete="new-password">
+            <p class="form-error" id="reg-password-error"></p>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="reg-password2">确认密码<span class="req">*</span></label>
+            <input class="form-input" type="password" id="reg-password2" placeholder="再次输入密码" autocomplete="new-password">
+            <p class="form-error" id="reg-password2-error"></p>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="reg-nickname">昵称（可选）</label>
+            <input class="form-input" type="text" id="reg-nickname" placeholder="不填则使用用户名">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="btn-register-submit">
+            <i class="fa fa-user-plus"></i><span>注 册</span>
+          </button>
+          <p class="form-hint text-center mt-8">注册成功后请登录。演示环境数据保存在浏览器本地。</p>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/mock.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages/login.js"></script>
+</body>
+</html>

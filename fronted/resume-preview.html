@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简历预览 - JobHub 校园求职</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body class="bg-slate-200">
+  <div class="page-wrap">
+    <nav id="global-nav" class="app-nav no-print"></nav>
+
+    <main class="page-main" style="max-width: none; background: #e2e8f0;">
+      <!-- 操作条（打印时隐藏） -->
+      <div class="no-print" style="max-width: 210mm; margin: 16px auto 0; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;">
+        <button id="btn-print" class="btn btn-primary"><i class="fa fa-print"></i><span>打印 / 另存为 PDF</span></button>
+        <a class="btn btn-outline" href="resume-editor.html"><i class="fa fa-pencil"></i><span>编辑简历</span></a>
+        <span class="text-sub" style="font-size: 13px;">
+          <i class="fa fa-info-circle"></i> 提示：点击打印后在打印对话框中选择「另存为 PDF」（Chrome / Edge 均支持），纸张选 A4。
+        </span>
+      </div>
+
+      <!-- 三态区块 -->
+      <div id="preview-state" class="no-print" style="max-width: 210mm; margin: 16px auto;"></div>
+
+      <!-- A4 简历纸张 -->
+      <div id="sheet-wrap">
+        <div id="sheet" class="sheet hidden"></div>
+      </div>
+    </main>
+
+    <footer id="global-footer" class="app-footer no-print"></footer>
+  </div>
+
+  <script src="js/mock.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages/resume-preview.js"></script>
+</body>
+</html>
