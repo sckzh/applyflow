@@ -3,6 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.userMapper">
+    <insert id="addUser">
+        insert into users
+        (username,password,email)
+        values(#{userName},#{password},#{email})
+    </insert>
 
 
     <!--id全局唯一,不能重复，相当于本查询的名称-->

@@ -20,4 +20,15 @@ public class firstTest {
         sqlSession.commit();
         sqlSession.close();
     }
+    @Test
+    public void addUserTest() throws IOException {
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        userMapper userMapper = sqlSession.getMapper(userMapper.class);
+        userMapper.addUser("kzh","123456","2198527313@qq.com");
+        sqlSession.commit();
+        sqlSession.close();
+    }
 }
