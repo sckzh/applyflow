@@ -21,4 +21,13 @@
         create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
     </update>
+    <update id="updatePassword">
+        UPDATE users SET password=#{password} WHERE username=#{userName};
+    </update>
+    <sql id="userSelectMethod">
+        SELECT * FROM users WHERE username=#{userName} AND password = #{password};
+    </sql>
+    <select id="selectUser" resultType="User">
+<include refid="userSelectMethod"></include>
+    </select>
 </mapper>
