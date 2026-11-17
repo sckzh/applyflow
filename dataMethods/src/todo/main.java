@@ -1,10 +1,10 @@
 package todo;
 
-import methods.interfaces.Methods;
-import methods.impls.UserMethodsImpl;
+import methods.daos.userDao;
+import methods.impls.userDaoImpl;
 
 public class main {
     static void main() {
-        Methods methods = new UserMethodsImpl();
+        userDao methods = new userDaoImpl();
     }
 }

@@ -1,11 +1,10 @@
 import mappers.userMapper;
-import methods.impls.UserMethodsImpl;
+import methods.impls.userDaoImpl;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
-import pojo.User;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,13 +23,13 @@ public class firstTest {
     }
     @Test
     public void selectUserTest() throws IOException {
-        UserMethodsImpl userMapperImpl   = new UserMethodsImpl();
+        userDaoImpl userMapperImpl   = new userDaoImpl();
         Integer a  = userMapperImpl.selectUser("kzh","123456");
         System.out.println(a);
     }
     @Test
     public void updatePasswordTest() throws IOException {
-        UserMethodsImpl userMapperImpl   = new UserMethodsImpl();
+        userDaoImpl userMapperImpl   = new userDaoImpl();
         userMapperImpl.updatePassword("kzh","12345678");
     }
 }

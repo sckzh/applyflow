@@ -1,7 +1,7 @@
 package methods.impls;
 
 import mappers.userMapper;
-import methods.interfaces.Methods;
+import methods.daos.userDao;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,7 +12,7 @@ import pojo.User;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class UserMethodsImpl implements Methods {
+public class userDaoImpl implements userDao {
     @Override
     public void setUpUserTable() throws IOException {
         String resource = "mybatis-config.xml";
