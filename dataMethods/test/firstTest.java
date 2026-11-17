@@ -32,4 +32,9 @@ public class firstTest {
         userDaoImpl userMapperImpl   = new userDaoImpl();
         userMapperImpl.updatePassword("kzh","12345678");
     }
+    @Test
+    public void updateEmailTest() throws IOException {
+        userDaoImpl userMapperImpl   = new userDaoImpl();
+        userMapperImpl.updateEmail("kzh","12345678","1");
+    }
 }

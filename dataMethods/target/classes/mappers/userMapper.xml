@@ -24,6 +24,9 @@
     <update id="updatePassword">
         UPDATE users SET password=#{password} WHERE username=#{userName};
     </update>
+    <update id="updateEmail">
+        UPDATE users SET email=#{email} WHERE username=#{userName};
+    </update>
     <sql id="userSelectMethod">
         SELECT * FROM users WHERE username=#{userName} AND password = #{password};
     </sql>

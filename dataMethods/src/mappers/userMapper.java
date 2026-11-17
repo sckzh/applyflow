@@ -10,4 +10,5 @@ public interface userMapper {
     void addUser(@Param("userName") String userName , @Param("password") String password,@Param("email") String email);
     User selectUser(@Param("userName") String userName , @Param("password") String password);
     void updatePassword(@Param("userName") String userName , @Param("password") String password);
+    void updateEmail(@Param("userName") String userName,@Param("password") String password,@Param("email") String email) throws IOException;
 }

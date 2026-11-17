@@ -9,4 +9,5 @@ public interface userDao {
     void addUser( String userName , String password, String email) throws IOException;
     Integer selectUser(@Param("userName") String userName , @Param("password") String password) throws IOException;
     void updatePassword(@Param("userName") String userName,@Param("password") String password) throws IOException;
+    void updateEmail(@Param("userName") String userName,@Param("password") String password,@Param("email") String email) throws IOException;
 }
