@@ -5,7 +5,7 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 在这里配置你的 Bean -->
-    <bean id="User" class="pojo.User">
+    <bean id="User" class="pojos.User">
         <property name=""></property>
     </bean>
 </beans>

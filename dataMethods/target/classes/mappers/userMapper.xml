@@ -27,6 +27,9 @@
     <update id="updateEmail">
         UPDATE users SET email=#{email} WHERE username=#{userName};
     </update>
+    <delete id="deleteUserById">
+        DELETE FROM users WHERE id = #{id};
+    </delete>
     <sql id="userSelectMethod">
         SELECT * FROM users WHERE username=#{userName} AND password = #{password};
     </sql>

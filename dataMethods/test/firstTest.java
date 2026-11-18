@@ -1,5 +1,5 @@
 import mappers.userMapper;
-import methods.impls.userDaoImpl;
+import daoImpls.userDaoImpl;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -36,5 +36,10 @@ public class firstTest {
     public void updateEmailTest() throws IOException {
         userDaoImpl userMapperImpl   = new userDaoImpl();
         userMapperImpl.updateEmail("kzh","12345678","1");
+    }
+    @Test
+    public void deleteUserTest() throws IOException {
+        userDaoImpl userMapperImpl   = new userDaoImpl();
+        userMapperImpl.deleteUserById(2);
     }
 }

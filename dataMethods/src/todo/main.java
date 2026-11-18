@@ -1,10 +1,13 @@
 package todo;
 
-import methods.daos.userDao;
-import methods.impls.userDaoImpl;
+import daos.userDao;
+import daoImpls.userDaoImpl;
+
+import java.io.IOException;
 
 public class main {
-    static void main() {
-        userDao methods = new userDaoImpl();
+    static void main() throws IOException {
+        userDao setUserTableDao = new userDaoImpl();
+        setUserTableDao.setUpUserTable();
     }
 }

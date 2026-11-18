@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+      <!--namespace:名称空间-->
+      <mapper namespace="mappers.userDetailedMessageMapper">
+
+    <!--id全局唯一,不能重复，相当于本查询的名称-->
+    <!--resultType:返回结果的数据类型-->
+    <update id="createUserDetailedMessageTable">
+        CREATE TABLE IF NOT EXISTS userDetailedMessage (
+        id       INT PRIMARY KEY,
+        nick_name VARCHAR(50) NOT NULL,
+        city VARCHAR(50),
+        phone_number INT(11),
+        job_thinking VARCHAR(100),
+        introduction VARCHAR(512),
+        CONSTRAINT fk_profile_user
+        <!--关联users,id一致，users删除一条记录，本表该记录也删除-->
+        FOREIGN KEY (id) REFERENCES users(id) ON DELETE CASCADE
+        );
+    </update>
+</mapper>

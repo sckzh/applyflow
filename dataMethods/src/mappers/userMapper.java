@@ -1,7 +1,7 @@
 package mappers;
 
 import org.apache.ibatis.annotations.Param;
-import pojo.User;
+import pojos.User;
 
 import java.io.IOException;
 
@@ -11,4 +11,5 @@ public interface userMapper {
     User selectUser(@Param("userName") String userName , @Param("password") String password);
     void updatePassword(@Param("userName") String userName , @Param("password") String password);
     void updateEmail(@Param("userName") String userName,@Param("password") String password,@Param("email") String email) throws IOException;
+    int deleteUserById(@Param("id") int id);
 }

@@ -1,20 +1,22 @@
-package methods.impls;
+package daoImpls;
 
 import mappers.userMapper;
-import methods.daos.userDao;
+import daos.userDao;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import pojo.User;
+import pojos.User;
 
 import java.io.IOException;
 import java.io.InputStream;
 
+
+
 public class userDaoImpl implements userDao {
     // 类加载时只读取一次 mybatis-config.xml，全局复用同一个 SqlSessionFactory
-    private static final SqlSessionFactory SQL_SESSION_FACTORY = buildSqlSessionFactory();
+     static final SqlSessionFactory SQL_SESSION_FACTORY = buildSqlSessionFactory();
     private static SqlSessionFactory buildSqlSessionFactory() {
         try (InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml")) {
             return new SqlSessionFactoryBuilder().build(inputStream);
@@ -85,5 +87,14 @@ public class userDaoImpl implements userDao {
             sqlSession.commit();
             sqlSession.close();
         }
+    }
+    @Override
+    public int deleteUserById(int id) throws IOException {
+        SqlSession sqlSession = SQL_SESSION_FACTORY.openSession();
+        userMapper userMapper = sqlSession.getMapper(userMapper.class);
+        Integer a = userMapper.deleteUserById(id);
+        sqlSession.commit();
+        sqlSession.close();
+        return a;
     }
 }

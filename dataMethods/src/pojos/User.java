@@ -1,11 +1,13 @@
-package pojo;
+package pojos;
+
+import daoImpls.userDetailedMessageDaoImpl;
 
 public class User {
     private int id;
     private String userName;
     private String password;
     private String email;
-
+    private userDetailedMessageDaoImpl userDetailedMessageDaoImpl;
     public int getId() {
         return id;
     }
